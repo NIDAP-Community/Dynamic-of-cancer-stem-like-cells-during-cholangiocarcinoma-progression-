@@ -1,0 +1,9 @@
+
+CellphoneDB v2.1.7
+
+## Run on Terminal ##
+source activate cpdb
+
+cellphonedb method statistical_analysis --counts-data gene_name CCBR_1119_cpdb_meta.txt CCBR_1119_cpdb_counts.txt
+
+cellphonedb plot dot_plot --rows CCBR_1119_cpdb_LR_interactions.txt --columns CCBR_1119_cpdb_interactions.txt
