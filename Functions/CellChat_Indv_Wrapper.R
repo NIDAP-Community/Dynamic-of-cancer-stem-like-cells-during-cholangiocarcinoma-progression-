@@ -89,7 +89,7 @@ cellchat_indv_wrapper <- function(so,
   cellchat <- netAnalysis_computeCentrality(cellchat, slot.name = "netP") # the slot 'netP' means the inferred intercellular communication network of signaling pathways
   
   # Signaling role analysis on the aggregated cell-cell communication network from all signaling pathways
-  gg1 <- netAnalysis_signalingRole_scatter(cellchat)
+  gg1 <- netAnalysis_signalingRole_scatter(cellchat, label.size = 6, font.size = 20)
   
   plot(gg1)
 }

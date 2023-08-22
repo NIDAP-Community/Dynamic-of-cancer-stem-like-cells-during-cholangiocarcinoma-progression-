@@ -62,7 +62,8 @@ violinPlot <- function(object,
                        jitter.points = FALSE,
                        jitter.width = 0.05, 
                        jitter.dot.size = 0.5, 
-                       print.outliers = TRUE){
+                       print.outliers = TRUE,
+                       add_sig_lines = FALSE){
   
   library(Seurat) 
   library(reshape2)
@@ -272,6 +273,15 @@ violinPlot <- function(object,
                      labels = LETTERS[seq( from = 1, to = length(plots) )])
     }
   }
+  
+  if(add_sig_lines){
+    
+    comparisons <- list(c("Tum2", "Tum1"), 
+                        c("Tum3", "Tum1"), c("Tum2", "Tum3"))
+    
+    g <- g + geom_signif(comparisons = comparisons, test = wilcox.test, 
+                  map_signif_level = TRUE)
+    }
   
   return(g)
 }

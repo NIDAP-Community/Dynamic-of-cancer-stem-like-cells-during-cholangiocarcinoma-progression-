@@ -302,5 +302,17 @@ Volcano(df = yap_Tum1_v_all,
         lfc.col = "avg_log2FC_Tum1_vs_all",
         FCcutoff = 0.5)
 
+### Supplementary Analysis ###
+# Kruskal-Wallis, Dunn PostHoc test for expression differences across Tum subclusters
+source("~/Manuscript/Functions/DunnPostHoc.R")
+
+# Map WGCNA module genes to pathways
+source("~/Manuscript/Functions/l2p.R")
+
+# Generates table of pathways (along with descriptions) that can be mapped to WGCNA modules
+l2p_wrapper(wgcna_module = "1")
+l2p_wrapper(wgcna_module = "2")
+l2p_wrapper(wgcna_module = "3")
+
 
 
